@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteRule ^api/([0-9a-zA-Z-å-Å-ä-Ä-ö-Ö]+)(?:/([0-9]*))?/?$ crud/api.php?name=$1&?key=$2 [NC,QSA]
+RewriteRule ^key/([0-9a-zA-Z-ö]+)(?:/([0-9]*))?/?$ generate_api_key.php?name=$1 [NC]
+RewriteRule ^delete/([0-9a-zA-Z-å-ä-ö]+)(?:/([0-9]*))?/?$ crud/delete_product.php?name=$1&?key=$2 [NC,QSA]
+RewriteRule ^update/([a-zA-Z]+)(/([a-zA-Z]+)(/([0-9]+))?)?$ update_product.php?name=$1&what_to_update=$3&update_to=$5 [NC,L,QSA]    
